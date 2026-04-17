@@ -10,6 +10,7 @@ Extract structured data from [stepstone.de](https://stepstone.de) — StepStone 
 
 
 
+
 **Search with filters** — Search by keyword and location. Filter by country / portal, sort by, radius (km), and more.
 
 **Detail enrichment** — Fetch full job descriptions, employer profiles for each listing.
@@ -19,6 +20,7 @@ Extract structured data from [stepstone.de](https://stepstone.de) — StepStone 
 ---
 
 ## Use cases
+
 
 
 
@@ -107,6 +109,7 @@ Each listing gets a content hash. On subsequent runs, only new or changed listin
 ---
 
 ## Related products by Black Falcon Data
+
 
 
 
