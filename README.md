@@ -2,7 +2,7 @@
 
 Extract structured data from [stepstone.de](https://stepstone.de) — StepStone scraper and jobs API covering 17 portals: stepstone.de/at/be/nl, TotalJobs, CWJobs, Caterer, PNet and more. Incremental mode, ML-predicted salary (ceSalary), full descriptions, 29 filters.
 
-**[StepStone Scraper on Apify →](https://apify.com/blackfalcondata/stepstone-scraper)**
+**[StepStone Scraper on Apify →](https://apify.com/blackfalcondata/stepstone-scraper?fpr=1h3gvi)**
 
 ---
 
@@ -11,15 +11,31 @@ Extract structured data from [stepstone.de](https://stepstone.de) — StepStone 
 
 
 
+
 **Search with filters** — Search by keyword and location. Filter by country / portal, sort by, radius (km), and more.
+
+**Multiple input modes** — full (all jobs) or incremental (new jobs only). Switch modes without re-scraping.
 
 **Detail enrichment** — Fetch full job descriptions, employer profiles for each listing.
 
-**Incremental mode** — Only get new or changed listings since your last run. Content hash per listing — no duplicates, no re-processing.
+**Change classification** — Track cross-run repost detection across runs. Build audit trails of how listings evolve over time.
+
+**Compact output** — Emit core fields only (AI-agent / MCP-friendly). Keeps response size small for LLM workflows.
+
+**Description truncation** — Cap description length per listing to control output size and cost.
+
+**Result cap** — Stop after N listings. Set to 0 for the full catalog.
+
+**Proxy support** — Route traffic through Apify Proxy or your own proxy group to avoid regional blocks and rate limits.
+
+**Export anywhere** — Download as JSON, CSV, or Excel. Stream via Apify API, webhooks, or integrations with Make, Zapier, Airbyte, Keboola.
+
+**Structured data** — Every listing returns the same schema with consistent field naming. All fields always present — `null` when unavailable, never omitted.
 
 ---
 
 ## Use cases
+
 
 
 
@@ -29,6 +45,9 @@ Integrate with your ETL pipeline to collect structured listings from stepstone.d
 
 **Market research**
 Monitor listings, track trends, and analyze market dynamics with structured, deduplicated data from stepstone.de.
+
+**AI / LLM training data**
+Structured JSON per listing is ready for RAG pipelines, embeddings, and agent workflows. Compact mode trims tokens for LLM context windows.
 
 ---
 
@@ -106,6 +125,98 @@ Each listing gets a content hash. On subsequent runs, only new or changed listin
 - <!-- WRITE: limitation 1 -->
 - <!-- WRITE: limitation 2 -->
 
+
+## Output fields
+
+Every listing returns the same 47-field schema. Missing values are `null` — never omitted.
+
+- `jobKey`
+- `title`
+- `company`
+- `location`
+- `postCode`
+- `url`
+- `datePosted`
+- `postedDaysAgo`
+- `workFromHome`
+- `workFromHomeLabel`
+- `isSponsored`
+- `isTopJob`
+- `companyId`
+- `companyUrl`
+- `companyLogoUrl`
+- `textSnippet`
+- `textSnippetCleaned`
+- `labels`
+- `topLabels`
+- `skills`
+- `harmonisedId`
+- `unifiedSalary`
+- `hasFuturePosting`
+- `partnership`
+- `metaData`
+- `publishFromDate`
+- `publishToDate`
+- `isAnonymous`
+- `isHighlighted`
+- `section`
+- `travelTime`
+- `geo`
+- `query`
+- `scrapedAt`
+- `portalUrl`
+- `detailsFetched`
+- `description`
+- `employmentType`
+- `validThrough`
+- `locationDetail`
+- `salaryDetail`
+- `ceSalary`
+- `directApply`
+- `industry`
+- `companyRating`
+- `benefits`
+- `companyWebsite`
+
+
+## Sample output
+
+One object per listing. Here is a real example from a production run:
+
+```json
+{
+  "jobKey": "107004033",
+  "title": "Developer",
+  "company": "IO Associates",
+  "location": "Manchester (M1)",
+  "postCode": "M1",
+  "url": "https://www.totaljobs.com/job/developer/io-associates-job107004033",
+  "datePosted": "2026-03-27T09:46:03.79Z",
+  "postedDaysAgo": 1,
+  "workFromHome": "",
+  "workFromHomeLabel": "",
+  "isSponsored": false,
+  "isTopJob": false
+}
+```
+
+*Truncated — full records contain 47 fields. See Output fields for the complete schema.*
+
+
+**[Try StepStone Scraper now — $5 free credit, no credit card →](https://apify.com/blackfalcondata/stepstone-scraper?fpr=1h3gvi)**
+
+
+## Pricing
+
+Pay only for what you extract. No subscription required — Apify's free $5 credit covers thousands of results.
+
+| Event | Price (USD) |
+| --- | --- |
+| Actor Start | $0.005 |
+| Result | $0.005 |
+
+See the [actor on Apify](https://apify.com/blackfalcondata/stepstone-scraper?fpr=1h3gvi) for current pricing.
+
 ---
 
 ## Related products by Black Falcon Data
@@ -113,10 +224,33 @@ Each listing gets a content hash. On subsequent runs, only new or changed listin
 
 
 
-- [Indeed Job Scraper](https://github.com/BlackFalconData-org/indeed-job-scraper) — Indeed job listings with salary data
-- [Glassdoor Job Scraper](https://github.com/BlackFalconData-org/glassdoor-job-scraper) — Glassdoor listings with company ratings
-- [Arbeitsagentur Scraper](https://github.com/BlackFalconData-org/arbeitsagentur-scraper) — Germany's official job portal (1M+ listings)
 
+- [Indeed Job Scraper](https://apify.com/blackfalcondata/indeed-job-scraper?fpr=1h3gvi) — Indeed job listings with salary data
+- [Glassdoor Job Scraper](https://apify.com/blackfalcondata/glassdoor-job-scraper?fpr=1h3gvi) — Glassdoor listings with company ratings
+- [Arbeitsagentur Scraper](https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi) — Germany's official job portal (1M+ listings)
+- [SEEK Scraper](https://apify.com/blackfalcondata/seek-scraper?fpr=1h3gvi) — Australia & NZ's largest job board
+- [Naukri Scraper](https://apify.com/blackfalcondata/naukri-scraper?fpr=1h3gvi) — India's largest job portal
+- [Bilbasen Scraper](https://apify.com/blackfalcondata/bilbasen-scraper?fpr=1h3gvi) — Denmark's largest car marketplace
+
+
+## Getting started with Apify
+
+New to Apify? [Create a free account with $5 credit](https://console.apify.com/sign-up?fpr=1h3gvi) — no credit card required.
+
+1. [Sign up free](https://console.apify.com/sign-up?fpr=1h3gvi) — $5 credit included
+2. Open the actor and paste your input
+3. Click Start — results download as JSON, CSV, or Excel
+
+Need more volume? [See pricing](https://apify.com/pricing?fpr=1h3gvi).
+
+---
+
+
+## About Black Falcon Data
+
+Black Falcon Data builds production-grade web scrapers for job boards and marketplace data. Browse our full actor catalog at [www.blackfalcondata.com](https://www.blackfalcondata.com).
+
+---
 ---
 
 *Last updated: 2026 03*
