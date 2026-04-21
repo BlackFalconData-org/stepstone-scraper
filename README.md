@@ -2,11 +2,12 @@
 
 Extract structured data from [stepstone.de](https://stepstone.de) — StepStone scraper and jobs API covering 17 portals: stepstone.de/at/be/nl, TotalJobs, CWJobs, Caterer, PNet and more. Incremental mode, ML-predicted salary (ceSalary), full descriptions, 29 filters.
 
-**[StepStone Scraper on Apify →](https://apify.com/blackfalcondata/stepstone-scraper?fpr=1h3gvi)**
+**[StepStone Jobs Scraper - 18 Portals, Salary & Incremental on Apify →](https://apify.com/blackfalcondata/stepstone-jobs-feed?fpr=1h3gvi)**
 
 ---
 
 ## Key features
+
 
 
 
@@ -17,8 +18,6 @@ Extract structured data from [stepstone.de](https://stepstone.de) — StepStone 
 **Multiple input modes** — full (all jobs) or incremental (new jobs only). Switch modes without re-scraping.
 
 **Detail enrichment** — Fetch full job descriptions, employer profiles for each listing.
-
-**Change classification** — Track cross-run repost detection across runs. Build audit trails of how listings evolve over time.
 
 **Compact output** — Emit core fields only (AI-agent / MCP-friendly). Keeps response size small for LLM workflows.
 
@@ -35,6 +34,7 @@ Extract structured data from [stepstone.de](https://stepstone.de) — StepStone 
 ---
 
 ## Use cases
+
 
 
 
@@ -225,6 +225,7 @@ See the [actor on Apify](https://apify.com/blackfalcondata/stepstone-scraper?fpr
 
 
 
+
 - [Indeed Job Scraper](https://apify.com/blackfalcondata/indeed-job-scraper?fpr=1h3gvi) — Indeed job listings with salary data
 - [Glassdoor Job Scraper](https://apify.com/blackfalcondata/glassdoor-job-scraper?fpr=1h3gvi) — Glassdoor listings with company ratings
 - [Arbeitsagentur Scraper](https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi) — Germany's official job portal (1M+ listings)
@@ -232,6 +233,14 @@ See the [actor on Apify](https://apify.com/blackfalcondata/stepstone-scraper?fpr
 - [Naukri Scraper](https://apify.com/blackfalcondata/naukri-scraper?fpr=1h3gvi) — India's largest job portal
 - [Bilbasen Scraper](https://apify.com/blackfalcondata/bilbasen-scraper?fpr=1h3gvi) — Denmark's largest car marketplace
 
+---
+
+
+## About Black Falcon Data
+
+Black Falcon Data builds production-grade web scrapers for job boards and marketplace data. Browse our full actor catalog at [www.blackfalcondata.com](https://www.blackfalcondata.com).
+
+---
 
 ## Getting started with Apify
 
@@ -245,12 +254,6 @@ Need more volume? [See pricing](https://apify.com/pricing?fpr=1h3gvi).
 
 ---
 
-
-## About Black Falcon Data
-
-Black Falcon Data builds production-grade web scrapers for job boards and marketplace data. Browse our full actor catalog at [www.blackfalcondata.com](https://www.blackfalcondata.com).
-
----
 ---
 
 *Last updated: 2026 03*
